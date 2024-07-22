@@ -34,17 +34,17 @@ const onFormFieldInput = event => {
 
 const onFeedbackFormSubmit = event => {
     event.preventDefault();
-    
-
-const inputs = feedbackFormEl.querySelectorAll('input');  // Предполагается, что класс '.feedback-form-input' убран для упрощения
-  for (const input of inputs) {
-    if (input.value.trim() === '') {  
-      alert('Заповніть всі поля!');
-      return;  
-    }
-    }
-  event.target.reset();
-  localStorage.removeItem('feedback-form-state');
+            
+        const children = feedbackFormEl.children
+        
+        for (const input of children) {
+            if (input.value.trim() === '') {  
+            alert('Заповніть всі поля!');
+            return;  
+            }
+            }
+        event.target.reset();
+        localStorage.removeItem('feedback-form-state');
 };
 
 feedbackFormEl.addEventListener('input', onFormFieldInput);
