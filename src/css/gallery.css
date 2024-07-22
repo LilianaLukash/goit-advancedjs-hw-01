@@ -1,0 +1,52 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 48px;
+  list-style: none;
+  padding: 100px 156px;
+}
+
+.gallery-item {
+  flex-basis: calc((100% - 48px) / 3);
+  transition: transform 250ms linear;
+}
+.gallery-item:hover,
+.gallery-item:focus {
+  transform: scale(1.1);
+}
+
+.gallery-link {
+  display: block;
+}
+
+.gallery-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.sl-caption {
+  background-color: rgba(6, 2, 78, 0.8) !important;
+
+  border-radius: 5px; /* Закругленные углы */
+  text-align: center; /* Выравнивание текста по центру */
+}
+.sl-overlay {
+  background-color: rgba(
+    0,
+    1,
+    13,
+    0.96
+  ) !important; /* Измените на нужный вам цвет */
+}
