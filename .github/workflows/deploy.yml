@@ -7,23 +7,17 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20' # Используем версию Node.js 20
-
-      - name: Install and build 🔧
+      - name: Install and build
         run: |
           npm install
           npm run build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.6
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          branch: gh-pages # Ветка, куда будет деплоиться сайт
-          folder: dist # Папка, содержащая собранный сайт
+          branch: gh-pages
+          folder: dist
