@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # Убедитесь, что используете подходящую версию Node.js
+          node-version: '20' # Используем версию Node.js 20
 
       - name: Install and build 🔧
         run: |
@@ -27,4 +27,3 @@ jobs:
         with:
           branch: gh-pages # Ветка, куда будет деплоиться сайт
           folder: dist # Папка, содержащая собранный сайт
-
