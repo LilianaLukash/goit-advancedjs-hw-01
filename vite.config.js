@@ -9,6 +9,7 @@ export default defineConfig(({ command }) => {
       [command === 'serve' ? 'global' : '_global']: {},
     },
     root: 'src',
+    base: '/goit-advancedjs-hw-01/',
     build: {
       sourcemap: true,
 
@@ -28,3 +29,7 @@ export default defineConfig(({ command }) => {
     plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
   };
 });
+import { defineConfig } from 'vite';
+
+
+  
