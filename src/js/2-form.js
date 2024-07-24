@@ -11,8 +11,8 @@ const fillFormFields = form => {
 
     formData = formDataFromLS;
   
-    form.elements.email.value = formDataFromLS["email"];
-    form.elements.message.value = formDataFromLS["message"];
+    form.elements.email.value = formDataFromLS["email"] || '';
+    form.elements.message.value = formDataFromLS["message"] || '';
 
 };
 
