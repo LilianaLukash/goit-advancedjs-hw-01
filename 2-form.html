@@ -11,31 +11,31 @@
     <script type="module" crossorigin src="/goit-advancedjs-hw-01/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-advancedjs-hw-01/assets/reset-df635d97.js">
     <link rel="stylesheet" href="/goit-advancedjs-hw-01/assets/reset-d3b5fc92.css">
-    <link rel="stylesheet" href="/goit-advancedjs-hw-01/assets/2-form-b794f075.css">
+    <link rel="stylesheet" href="/goit-advancedjs-hw-01/assets/2-form-e2cc3e4c.css">
   </head>
   <body>
     <p><a href="./index.html">Go back</a></p>
 
     <div class="container">
-      <form class="feedback-form js-feedback-form">
-        <input
-          name="user_name"
-          type="text"
-          class="feedback-form-input"
-          placeholder="Введіть імʼя"
-        />
-        <input
-          name="user_email"
-          type="email"
-          class="feedback-form-input js-feedback-email"
-          placeholder="Введіть email"
-        />
-        <textarea
-          name="user_message"
-          class="feedback-form-message"
-          placeholder="Введіть повідомлення"
-        ></textarea>
-        <button class="feedback-form-submit">Відправити</button>
+      <form class="feedback-form" autocomplete="off">
+        <label>
+          Email
+          <input
+            type="email"
+            class="feedback-form-input"
+            name="email"
+            autofocus
+          />
+        </label>
+        <label>
+          Message
+          <textarea
+            class="feedback-form-message"
+            name="message"
+            rows="8"
+          ></textarea>
+        </label>
+        <button type="submit" class="feedback-form-submit">Submit</button>
       </form>
     </div>
 
