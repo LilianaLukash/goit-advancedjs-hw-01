@@ -1,31 +1,27 @@
-const feedbackFormEl = document.querySelector('.js-feedback-form');
-let formData = {};
+const feedbackFormEl = document.querySelector('.feedback-form');
+
+let formData = {email: "", message: "" };
 
 const fillFormFields = form => {
-  const formDataFromLS = JSON.parse(localStorage.getItem('feedback-form-state'));
+    const formDataFromLS = JSON.parse(localStorage.getItem('feedback-form-state'));
 
-  if (formDataFromLS === null) {
-    return;
-  }
-
-  formData = formDataFromLS;
-
-  for (const key in formDataFromLS) {
-    if (formDataFromLS.hasOwnProperty(key)) {
-      form.elements[key].value = formDataFromLS[key];
+    if (formDataFromLS === null) {
+        return;
     }
-  }
+
+    formData = formDataFromLS;
+  
+    form.elements.email.value = formDataFromLS["email"];
+    form.elements.message.value = formDataFromLS["message"];
+
 };
+
 
 fillFormFields(feedbackFormEl);
 
 const onFormFieldInput = event => {
-  // const {
-  //   target: { value: fieldValue },
-  // } = event;
-
   const fieldName = event.target.name;
-  const fieldValue = event.target.value;
+  const fieldValue = event.target.value.trim();
 
   formData[fieldName] = fieldValue;
 
@@ -33,18 +29,20 @@ const onFormFieldInput = event => {
 };
 
 const onFeedbackFormSubmit = event => {
-    event.preventDefault();
-            
-        const children = feedbackFormEl.children
-        
-        for (const input of children) {
-            if (input.value.trim() === '') {  
-            alert('Заповніть всі поля!');
-            return;  
-            }
-            }
-        event.target.reset();
-        localStorage.removeItem('feedback-form-state');
+  event.preventDefault();
+
+  const { email, message } = formData;
+
+  if (email === '' || message === '') {
+    alert('Заповніть всі поля!');
+    return;
+  }
+
+  console.log(formData);
+
+  feedbackFormEl.reset();
+  localStorage.removeItem('feedback-form-state');
+  formData = { email: "", message: "" };
 };
 
 feedbackFormEl.addEventListener('input', onFormFieldInput);

@@ -6,6 +6,20 @@
   margin: 0 auto;
   box-shadow: 0 10px 10px 0 #cccccc;
 }
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+
+  text-align: left;
+}
+input {
+  display: flex;
+  flex-direction: column;
+}
 
 .feedback-form-input {
   height: 40px;
@@ -23,12 +37,17 @@
 }
 
 .feedback-form-submit {
-  padding: 10px 20px;
-  background-color: transparent;
-  border: 1px solid #303030;
+  color: white;
+  height: 40px;
+  width: 95px;
+
+  padding: 8px, 16px, 8px, 16px;
+  background-color: #4e75ff;
+  border-color: transparent;
+
   border-radius: 4px;
   cursor: pointer;
-  align-self: center;
+
   transition: transform 250ms linear;
 }
 
